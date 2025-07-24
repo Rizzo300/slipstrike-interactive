@@ -5,151 +5,154 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slipstrike Interactive</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
       * {
-        box-sizing: border-box;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
+
       body {
-        background: linear-gradient(to bottom, #0c0f15, #1a1e28);
-        color: #e0e0e0;
-        font-family: 'Roboto', sans-serif;
-        text-align: center;
-        padding: 60px 20px;
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0f1115, #1a1f2b);
+        color: #f0f0f0;
+        padding: 40px 20px;
         overflow-x: hidden;
       }
-      h1 {
-        font-size: 3.2em;
-        color: #00bfff;
-        margin-bottom: 20px;
-        font-family: 'Orbitron', sans-serif;
-        animation: fadeInDown 1s ease-out;
+
+      header {
+        text-align: center;
+        margin-bottom: 50px;
       }
-      p {
+
+      header h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 3.5em;
+        color: #00ffe7;
+        animation: fadeInDown 1.2s ease-out;
+      }
+
+      header p {
         font-size: 1.2em;
-        max-width: 700px;
-        margin: 10px auto;
-        line-height: 1.6;
-        animation: fadeIn 2s ease;
+        color: #ccc;
+        margin-top: 10px;
+        animation: fadeInUp 1.2s ease-out;
       }
-      .highlight {
-        color: #ffcc00;
-        font-weight: bold;
-      }
-      .contact {
-        margin-top: 60px;
-        background: #121721;
-        padding: 40px 30px;
-        border-radius: 12px;
+
+      .section {
         max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0 0 25px #00bfff33;
-        animation: fadeInUp 1.5s ease;
+        margin: 0 auto 40px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid #222;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #00ffe722;
+        animation: fadeIn 1.5s ease-out;
       }
-      .contact h2 {
-        color: #00bfff;
+
+      .section h2 {
+        color: #00ffe7;
         margin-bottom: 20px;
-        font-family: 'Orbitron', sans-serif;
+        font-family: 'Orbitron';
+        font-size: 1.8em;
       }
-      .roles {
-        text-align: left;
-        max-width: 450px;
-        margin: 0 auto 20px;
-        font-size: 1.1em;
-        line-height: 1.5;
+
+      ul.roles {
+        list-style: square;
+        padding-left: 20px;
+        line-height: 1.6;
       }
+
       form {
-        text-align: left;
-        max-width: 450px;
-        margin: 30px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
       }
+
       input, textarea {
-        width: 100%;
         padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 6px;
-        background-color: #1f242d;
+        background: #111;
         color: #fff;
+        border: 1px solid #333;
+        border-radius: 6px;
         font-size: 1em;
       }
+
       button {
-        padding: 12px 25px;
-        background-color: #00bfff;
-        color: #fff;
+        background-color: #00ffe7;
+        color: #111;
         border: none;
+        padding: 12px;
+        font-weight: bold;
         border-radius: 6px;
         cursor: pointer;
-        transition: background 0.3s ease;
+        transition: background 0.3s;
       }
+
       button:hover {
-        background-color: #008ecf;
+        background-color: #00ccb9;
       }
+
       footer {
+        text-align: center;
         margin-top: 80px;
         font-size: 0.9em;
         color: #666;
-        animation: fadeIn 3s ease;
       }
-      @keyframes fadeIn {
-        0% {opacity: 0; transform: translateY(10px);}
-        100% {opacity: 1; transform: translateY(0);}
-      }
+
       @keyframes fadeInDown {
-        0% {opacity: 0; transform: translateY(-20px);}
-        100% {opacity: 1; transform: translateY(0);}
+        from { transform: translateY(-40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
       }
+
       @keyframes fadeInUp {
-        0% {opacity: 0; transform: translateY(20px);}
-        100% {opacity: 1; transform: translateY(0);}
+        from { transform: translateY(40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
     </style>
   </head>
   <body>
-    <h1>Slipstrike Interactive</h1>
-    <p>Hey! I’m <span class="highlight">13 years old</span> and building a Titanfall-style shooter using Source 2 — just for fun and learning.</p>
-    <p>This is a one-person indie studio (for now) aiming to create fast, crazy parkour and giant Titans. No money, just passion and late-night coding!</p>
-    <p>Follow along and watch Slipstrike grow from a dream to a full-on game studio.</p>
+    <header>
+      <h1>Slipstrike Interactive</h1>
+      <p>Indie studio by a 13-year-old dev building a Titanfall-style shooter in Source 2.</p>
+    </header>
 
-    <section class="contact">
-      <h2>Join the Mission</h2>
-      <p>Looking for passionate helpers to join Slipstrike — no money, no pressure. Just learning and making something awesome.</p>
-      <p>Needed Roles:</p>
-      <div class="roles">
-        <ul>
-          <li>Gameplay Programmers</li>
-          <li>3D Modelers</li>
-          <li>Animators</li>
-          <li>Level Designers</li>
-          <li>Sound Designers</li>
-        </ul>
-      </div>
+    <section class="section">
+      <h2>About</h2>
+      <p>Slipstrike is about fast, creative movement and giant Titan combat. This is just the beginning of an ambitious project made with passion and curiosity — no money, just vibes and Source 2 magic.</p>
+    </section>
 
+    <section class="section">
+      <h2>Roles Needed</h2>
+      <ul class="roles">
+        <li>Gameplay Programmers (S&box / Source 2)</li>
+        <li>3D Modelers (weapons, mechs, pilots)</li>
+        <li>Animators (FPS & mech rigging)</li>
+        <li>Sound Designers (SFX and music)</li>
+        <li>Level Designers (Source-style maps)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Contact</h2>
       <form action="https://formsubmit.co/youremail@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_next" value="https://slipstrike.pages.dev/thanks.html">
-
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your name">
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Your email">
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Tell me about yourself or your skills!"></textarea>
-
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Why do you want to join Slipstrike?" rows="5" required></textarea>
         <button type="submit">Send</button>
       </form>
     </section>
 
     <footer>
-      &copy; 2025 Slipstrike Interactive — Built by a kid with a dream 🎮
+      &copy; 2025 Slipstrike Interactive — All rights reserved.
     </footer>
   </body>
 </html>
