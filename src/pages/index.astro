@@ -1,4 +1,5 @@
 ---
+// No frontmatter logic is needed here
 ---
 <html lang="en">
   <head>
@@ -34,8 +35,7 @@
         color: #ccc;
       }
 
-      section.about,
-      section.contact {
+      section.about, section.contact {
         max-width: 800px;
         margin: 3rem auto;
         padding: 2rem;
@@ -71,17 +71,14 @@
         margin-top: 1rem;
       }
 
-      input,
-      textarea,
-      button {
+      input, textarea, button {
         padding: 0.8rem;
         border-radius: 6px;
         border: none;
         font-size: 1rem;
       }
 
-      input,
-      textarea {
+      input, textarea {
         background-color: #1e2a38;
         color: #fff;
       }
@@ -91,10 +88,12 @@
         color: #000;
         font-weight: bold;
         cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s ease;
       }
 
       button:hover {
         background-color: #00c0cc;
+        transform: scale(1.05);
       }
 
       footer {
@@ -102,37 +101,19 @@
         margin: 3rem 1rem 1rem;
         color: #888;
         font-size: 0.9rem;
+        animation: fadeIn 2s ease-in;
       }
 
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+        from { opacity: 0; } to { opacity: 1; }
       }
 
       @keyframes slideInDown {
-        from {
-          transform: translateY(-20px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
+        from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; }
       }
 
       @keyframes slideInUp {
-        from {
-          transform: translateY(20px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
+        from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; }
       }
     </style>
   </head>
@@ -144,10 +125,7 @@
 
     <section class="about">
       <h2>About the Studio</h2>
-      <p>
-        This is a solo project built with passion, curiosity, and a love for fast-paced shooters and parkour.
-        Slipstrike is all about learning, growing, and making cool stuff — together.
-      </p>
+      <p>This is a solo project built with passion, curiosity, and a love for fast-paced shooters and parkour. Slipstrike is all about learning, growing, and making cool stuff — together.</p>
     </section>
 
     <section class="contact">
@@ -155,16 +133,14 @@
       <p>Looking for creative, motivated people to help with the project — no experience needed!</p>
       <p>Open Roles:</p>
       <ul>
-        <li>Programmers (S&amp;box / Source 2)</li>
+        <li>Programmers (S&box / Source 2)</li>
         <li>3D Modelers (weapons, environments, characters)</li>
         <li>Animators (FPS viewmodels, Titans, parkour)</li>
         <li>Sound Designers</li>
-        <li>Level Designers (Hammer, Belnder)</li>
+        <li>Level Designers</li>
       </ul>
       <form action="https://formsubmit.co/slipstrikeinteractive@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_subject" value="New Team Application - Slipstrike" />
-
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="5" placeholder="Tell me about yourself or how you want to help" required></textarea>
