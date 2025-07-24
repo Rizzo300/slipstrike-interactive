@@ -1,5 +1,5 @@
 ---
-// No frontmatter needed here unless you want variables or scripts
+// Astro page — no frontmatter needed unless using dynamic content
 ---
 
 <html lang="en">
@@ -7,63 +7,106 @@
     <meta charset="UTF-8" />
     <title>Slipstrike Interactive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       body {
-        background-color: #0c0f15;
+        background: linear-gradient(to bottom, #0c0f15, #1a1e28);
         color: #e0e0e0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Roboto', sans-serif;
         text-align: center;
         padding: 60px 20px;
-        margin: 0;
+        overflow-x: hidden;
       }
       h1 {
-        font-size: 3em;
+        font-size: 3.2em;
         color: #00bfff;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        font-family: 'Orbitron', sans-serif;
+        animation: fadeInDown 1s ease-out;
       }
       p {
-        font-size: 1.3em;
-        max-width: 600px;
+        font-size: 1.2em;
+        max-width: 700px;
         margin: 10px auto;
-        line-height: 1.5;
+        line-height: 1.6;
+        animation: fadeIn 2s ease;
       }
       .highlight {
         color: #ffcc00;
         font-weight: bold;
       }
       .contact {
-        margin-top: 50px;
+        margin-top: 60px;
         background: #121721;
-        padding: 30px 20px;
-        border-radius: 8px;
-        max-width: 700px;
+        padding: 40px 30px;
+        border-radius: 12px;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 0 0 15px #00bfff88;
+        box-shadow: 0 0 25px #00bfff33;
+        animation: fadeInUp 1.5s ease;
       }
       .contact h2 {
         color: #00bfff;
         margin-bottom: 20px;
+        font-family: 'Orbitron', sans-serif;
       }
       .roles {
         text-align: left;
-        max-width: 400px;
+        max-width: 450px;
         margin: 0 auto 20px;
         font-size: 1.1em;
-        line-height: 1.4;
+        line-height: 1.5;
+      }
+      form {
+        text-align: left;
+        max-width: 450px;
+        margin: 30px auto 0;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 6px;
+        background-color: #1f242d;
+        color: #fff;
+        font-size: 1em;
+      }
+      button {
+        padding: 12px 25px;
+        background-color: #00bfff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      button:hover {
+        background-color: #008ecf;
       }
       footer {
-        margin-top: 60px;
+        margin-top: 80px;
         font-size: 0.9em;
         color: #666;
+        animation: fadeIn 3s ease;
       }
-      a.email-link {
-        color: #ffcc00;
-        text-decoration: none;
-        font-weight: bold;
+      @keyframes fadeIn {
+        0% {opacity: 0; transform: translateY(10px);}
+        100% {opacity: 1; transform: translateY(0);}
       }
-      a.email-link:hover {
-        text-decoration: underline;
+      @keyframes fadeInDown {
+        0% {opacity: 0; transform: translateY(-20px);}
+        100% {opacity: 1; transform: translateY(0);}
+      }
+      @keyframes fadeInUp {
+        0% {opacity: 0; transform: translateY(20px);}
+        100% {opacity: 1; transform: translateY(0);}
       }
     </style>
   </head>
@@ -71,12 +114,12 @@
     <h1>Slipstrike Interactive</h1>
     <p>Hey! I’m <span class="highlight">13 years old</span> and building a Titanfall-style shooter using Source 2 — just for fun and learning.</p>
     <p>This is a one-person indie studio (for now) aiming to create fast, crazy parkour and giant Titans. No money, just passion and late-night coding!</p>
-    <p>Follow along and watch Slipstrike grow from a dream to a game.</p>
+    <p>Follow along and watch Slipstrike grow from a dream to a full-on game studio.</p>
 
     <section class="contact">
-      <h2>Join Us!</h2>
-      <p>Looking for passionate helpers to join Slipstrike for free — no experience required, just motivation!</p>
-      <p>If you want to help build the game or just learn, I’m looking for:</p>
+      <h2>Join the Mission</h2>
+      <p>Looking for passionate helpers to join Slipstrike — no money, no pressure. Just learning and making something awesome.</p>
+      <p>Needed Roles:</p>
       <div class="roles">
         <ul>
           <li>Gameplay Programmers</li>
@@ -84,3 +127,29 @@
           <li>Animators</li>
           <li>Level Designers</li>
           <li>Sound Designers</li>
+        </ul>
+      </div>
+
+      <form action="https://formsubmit.co/youremail@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_next" value="https://slipstrike.pages.dev/thanks.html">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Your email">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell me about yourself or your skills!"></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      &copy; 2025 Slipstrike Interactive — Built by a kid with a dream 🎮
+    </footer>
+  </body>
+</html>
